@@ -5,9 +5,9 @@ from typing import Any
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from Backend.app.graph import WorkflowEngine
-from Backend.app.simulator import get_scenario
-from Backend.app.state import build_initial_state
+from app.graph import WorkflowEngine
+from app.simulator import get_scenario
+from app.state import build_initial_state
 
 
 class AnalyzeRequest(BaseModel):

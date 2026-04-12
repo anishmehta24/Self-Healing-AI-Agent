@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from Backend.app.api import build_router
-from Backend.app.graph import WorkflowEngine
-from Backend.app.llm import LLMClient
-from Backend.app.persistence import IncidentStore
-from Backend.app.state import build_initial_state
+from app.api import build_router
+from app.graph import WorkflowEngine
+from app.llm import LLMClient
+from app.persistence import IncidentStore
+from app.state import build_initial_state
 
 
 def build_test_client(tmp_path):

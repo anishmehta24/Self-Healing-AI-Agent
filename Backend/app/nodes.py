@@ -4,10 +4,10 @@ import json
 from collections import Counter
 from typing import Any
 
-from Backend.app.llm import LLMClient
-from Backend.app.safety import is_safe_action
-from Backend.app.simulator import execute_action
-from Backend.app.state import IncidentState, append_history
+from app.llm import LLMClient
+from app.safety import is_safe_action
+from app.simulator import execute_action
+from app.state import IncidentState, append_history
 
 
 KEYWORD_MAP = {

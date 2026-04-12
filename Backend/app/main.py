@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from Backend.app.api import build_router
-from Backend.app.config import settings
-from Backend.app.graph import WorkflowEngine
-from Backend.app.llm import LLMClient
-from Backend.app.persistence import IncidentStore
+from app.api import build_router
+from app.config import settings
+from app.graph import WorkflowEngine
+from app.llm import LLMClient
+from app.persistence import IncidentStore
 
 
 def create_app() -> FastAPI:
@@ -20,6 +21,16 @@ def create_app() -> FastAPI:
     engine = WorkflowEngine(llm_client=llm_client, store=store, max_retries=settings.max_retries)
 
     app = FastAPI(title=settings.app_name)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+        ],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     app.include_router(build_router(engine))
     return app
 

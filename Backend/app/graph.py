@@ -4,8 +4,8 @@ from typing import Callable
 
 from langgraph.graph import END, START, StateGraph
 
-from Backend.app.llm import LLMClient
-from Backend.app.nodes import (
+from app.llm import LLMClient
+from app.nodes import (
     analyze_root_cause,
     classify_issue,
     detect_issue,
@@ -16,8 +16,8 @@ from Backend.app.nodes import (
     suggest_fix,
     validate_fix,
 )
-from Backend.app.persistence import IncidentStore
-from Backend.app.state import IncidentState
+from app.persistence import IncidentStore
+from app.state import IncidentState
 
 
 class WorkflowEngine:

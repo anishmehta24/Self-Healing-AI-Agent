@@ -1,6 +1,6 @@
-from Backend.app.llm import LLMClient
-from Backend.app.nodes import classify_issue, detect_issue, ingest_logs, suggest_fix
-from Backend.app.state import build_initial_state
+from app.llm import LLMClient
+from app.nodes import classify_issue, detect_issue, ingest_logs, suggest_fix
+from app.state import build_initial_state
 
 
 def test_ingest_and_detect_issue() -> None:
