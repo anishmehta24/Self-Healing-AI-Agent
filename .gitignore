@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Backend artifacts
+Backend/.test_tmp/
+Backend/.pytest_cache/
+Backend/*.db
+Backend/*.sqlite
+Backend/*.sqlite3
+Backend/*.egg-info/
+
+# Frontend artifacts
+Frontend/node_modules/
+Frontend/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Legacy root artifacts
+.test_tmp/
+pytest-cache-files-*/
+self_healing.db
+self_healing_ai_agent.egg-info/
