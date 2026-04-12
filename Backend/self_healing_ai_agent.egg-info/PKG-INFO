@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: self-healing-ai-agent
+Version: 0.1.0
+Summary: Self-healing production system prototype powered by FastAPI and LangGraph
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: uvicorn>=0.30.0
+Requires-Dist: pydantic>=2.8.0
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: langgraph>=0.2.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+
+# Self-Healing Production System
+
+Production-style AI DevOps agent prototype built with FastAPI and LangGraph.
+
+## Features
+
+- Stateful graph-based remediation workflow
+- Conditional routing and retry loops
+- SQLite-backed incident persistence
+- Safe-action whitelist with approval gate
+- Simulated production incident scenarios
+- OpenAI-compatible LLM interface with deterministic fallback
+
+## Run
+
+```bash
+pip install -e .
+uvicorn app.main:app --reload
+```
+
+## Endpoints
+
+- `POST /analyze`
+- `POST /simulate`
+- `GET /incidents/{incident_id}`
+- `POST /incidents/{incident_id}/approve`
+- `GET /workflow/diagram`
