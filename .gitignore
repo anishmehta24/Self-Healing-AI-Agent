@@ -23,6 +23,12 @@ Backend/*.egg-info/
 Frontend/node_modules/
 Frontend/dist/
 
+# Agent artifacts
+Agent/.agent_state/
+Agent/.pytest_cache/
+Agent/__pycache__/
+Agent/tests/__pycache__/
+
 # Environment files
 .env
 .env.*

@@ -1,0 +1,22 @@
+log_paths:
+  - ./logs/server.log
+  - ./logs/app.log
+
+server_url: http://localhost:8000/logs
+agent_id: agent-dev-001
+
+batch_size: 50
+flush_interval_seconds: 3
+poll_interval_seconds: 0.5
+retry_backoff_seconds: 2
+max_backoff_seconds: 30
+
+state_db_path: .agent_state/agent.db
+start_position: end
+
+filters:
+  levels:
+    - ERROR
+    - WARN
+
+parse_json_logs: true
